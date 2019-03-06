@@ -1,0 +1,77 @@
+@import './variables';
+@import './colors';
+
+html, body {
+  padding: 0;
+  margin: 0;
+  color: $color-font;
+  background-color: $color-body-background;
+  width: 100%;
+  height: 100%;
+  font-size: $base-font-size;
+  line-height: 1.5;
+  font-family: "PingFang TC","Lantinghei TC","Heiti TC","Apple LiGothic",微軟正黑體,"Microsoft JhengHei","Microsoft JhengHei UI","Microsoft YaHei","Microsoft YaHei UI","PMingLiU",Arial,sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-content {
+  width: 90%;
+  max-width: 500px; 
+}
+
+.page-title {
+  text-align: center;
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0 0 30px 0
+}
+
+.page-desc {
+  text-align: center;
+  font-size: 0.75em;
+  color: $color-font-light;
+  margin-bottom: 5px;
+}
+
+.dropbox-button {
+  text-align: center;
+}
+
+//aplayer override
+#doroppuongaku {
+  .aplayer-pic .aplayer-pause {
+    width: 26px;
+    height: 26px;
+    border: 2px solid #fff;
+    bottom: 50%;
+    right: 50%;
+    margin: 0 -15px -15px 0;
+    
+    .aplayer-icon-pause {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  .aplayer-pic {
+    background-image: none;
+    background-color: $color-aplayer-pic;
+  }
+
+  .aplayer-list-author {
+    display: none;
+  }
+
+  .aplayer-list-cur {
+    background-color: #333333;
+  }
+}
+
