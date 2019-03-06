@@ -52,6 +52,19 @@ module.exports = merge(baseWebpackConfig, {
             loader: 'css-loader'
           },
           {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: [
+                require('autoprefixer')(
+                  {
+                    'browsers': ['>0.2%', 'last 2 versions', 'not dead', 'ie 10', 'ie 11']
+                  }
+                )
+              ]
+            }
+          },
+          {
             loader: 'sass-loader'
           }
         ]
