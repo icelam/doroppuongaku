@@ -9,3 +9,6 @@ yarn-error.log*
 bundle-analyzer-plugin-report.html
 
 .env.local
+.env.development.local
+.env.test.local
+.env.production.local

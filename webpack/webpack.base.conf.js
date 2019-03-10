@@ -1,5 +1,4 @@
 const Path = require('path');
-const Dotenv = require('dotenv-webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
@@ -35,8 +34,7 @@ module.exports = {
         collapseWhitespace: true,
         removeAttributeQuotes: true
       }
-    }),
-    new Dotenv()
+    })
   ],
   resolve: {
     extensions: ['*', '.js', '.vue', '.json', '.scss'],

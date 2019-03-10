@@ -1,7 +1,21 @@
 const Path = require('path');
+const fs = require('fs');
 const Webpack = require('webpack');
 const merge = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.base.conf')
+const Dotenv = require('dotenv-webpack');
+
+// https://github.com/bkeepers/dotenv#what-other-env-files-can-i-use
+const dotenvFiles = [
+  Path.resolve(__dirname, '../.env.development.local'),
+  Path.resolve(__dirname, '../.env.test.local'),
+  Path.resolve(__dirname, '../.env.local'),
+  Path.resolve(__dirname, '../.env.development'),
+  Path.resolve(__dirname, '../.env.test'),
+  Path.resolve(__dirname, '../.env')
+].filter(dotenvFile => fs.existsSync(dotenvFile));
+
+console.log(dotenvFiles[0] + ' will be used.\n');
 
 module.exports = merge(baseWebpackConfig, {
   mode: 'development',
@@ -22,7 +36,8 @@ module.exports = merge(baseWebpackConfig, {
   plugins: [
     new Webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
-    })
+    }),
+    new Dotenv({ path: dotenvFiles[0] })
   ],
   module: {
     rules: [
