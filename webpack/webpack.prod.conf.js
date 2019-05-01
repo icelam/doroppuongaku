@@ -72,6 +72,15 @@ module.exports = merge(baseWebpackConfig, {
                   {
                     'browsers': ['>0.2%', 'last 2 versions', 'not dead', 'ie 10', 'ie 11']
                   }
+                ),
+                require('cssnano')(
+                  {
+                    preset: ['default', {
+                      discardComments: {
+                        removeAll: true,
+                      },
+                    }],
+                  }
                 )
               ]
             }
